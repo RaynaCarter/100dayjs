@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+  background: url(./img/NYE.jpg) no-repeat ;
+  background-size: cover;
+
+}
+
+
+h1 {
+  font-size: 60px;
+  color: #fff;
+  line-height: 2;
+}
+
+#countdown {
+  background-color: rgba(0,0,0,.4);
+  padding: 20px;
+  font-size: 45px;
+  color: #fff;
+  border-radius: 10px;
+}

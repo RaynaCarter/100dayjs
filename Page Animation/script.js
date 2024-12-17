@@ -1,5 +1,7 @@
 // smooth scrolling behavior with javascript 
-
+AOS.init({
+    duration: 1000,
+}) 
 const links = document.querySelectorAll(".nav-list li a")
 
 for (link of links){
@@ -54,3 +56,4 @@ function scrollProgress() {
         newsLetter.style.transform = "translateX(-100%)";
      });
 }
+

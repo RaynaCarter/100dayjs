@@ -12,13 +12,7 @@ const pLower = document.getElementById("p-lowercase");
 const pNumber = document.getElementById("p-number");
 const pSymbol = document.getElementById("p-symbol");
 const password = document.getElementById("password");
-
-//Event listeners 
-subButton.addEventListener("click", genPw);
-// pUpper.addEventListener("click", genPw);
-// pLower.addEventListener("click", genPw);
-// pNumber.addEventListener("click", genPw);
-// pSymbol.addEventListener("click", genPw);
+const copyBtn = document.getElementById("copy");
 
 
 function genPw() {
@@ -39,13 +33,18 @@ function genPw() {
         initialPw += symbol.charAt(Math.floor(Math.random() * 10));
         charOptions += symbol;
     }
-    scramble(initialPw);
+    // store the current length of the inital password 
+    let startValue = initialPw.length;
+
+    // Scramble the characters in the current password so that it isn't always in the order Uppercase,Lowercase,number,symbol
+    let genPw = scramble(initialPw);
+    // console.log(password);
     console.log(pLength.value);
-    for (let i = 0; i < (pLength.value-(initialPw.length)); i++) {
-        initialPw += charOptions.charAt(Math.floor(Math.random() * charOptions.length));     
+    for (let i = 0; i < (pLength.value-(startValue)); i++) {
+        genPw += charOptions.charAt(Math.floor(Math.random() * charOptions.length));     
     }
-    console.log(initialPw);
-    return initialPw
+    console.log(genPw);
+    password.value = genPw;
 }
 
 // I dont want the password to always start in a certain order so I'm gonna scramble it 
@@ -62,6 +61,28 @@ function scramble(initialPw) {
         [splitInitialPw[i], splitInitialPw[j]] = [splitInitialPw[j], splitInitialPw[i]]
     }
     // console.log(splitInitialPw);
-    initialPw = splitInitialPw.join;
+    initialPw = splitInitialPw.join("");
     return initialPw;
 }
+
+// COPY THE GENERATED PASSWORD
+const copyText = (e) => {
+    e.preventDefault();
+
+    // navigator.clioboard is a property of the Clipboard API, allowing interaction with the system clipboard 
+    // the writeText() is async
+    // the function contained within 'then' is what will take place after the async function has finished
+    navigator.clipboard.writeText(password.value).then(() => {
+        copy.textContent = "Copied";
+
+    // this set timeout returns the button text back to "Copy" after 3 seconds
+        setTimeout(() => {
+            copy.textContent = "Copy";
+        }, 3000);
+    });
+};
+
+
+//Event listeners 
+subButton.addEventListener("click", genPw);
+copyBtn.addEventListener("click",copyText);

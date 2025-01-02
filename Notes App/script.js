@@ -3,7 +3,9 @@ const noteBtn = document.getElementById("add-btn"),
   noteText = document.getElementById("note-text"),
   clear = document.querySelector(".clear");
 
-//   Get notes from local storage
+// Get notes from local storage
+// Creates an empty array if there isnt one yet 
+// then uses the JSON.parse() to create a javascript array
 function getNotes() {
   let notes = localStorage.getItem("notes");
   if (notes == null) {
@@ -14,7 +16,7 @@ function getNotes() {
 }
 
 
-//   Note btn event listener
+//  Note btn event listener
 noteBtn.addEventListener("click", (e) => {
     e.preventDefault();
   

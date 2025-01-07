@@ -94,6 +94,8 @@ form input,
   margin: 5px 0;
   display: none;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
 
 .health {

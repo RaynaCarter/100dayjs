@@ -1,0 +1,99 @@
+
+
+:root {
+  --white: #fff;
+  --black: #1c2b2d;
+  --blue: #31326f;
+  --light-blue: #005490;
+  --color-primary: #9d0191;
+  --color-sec: #db6400;
+  --grey: #eee;
+  --dark-grey: #222831;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  height: 100vh; 
+}
+
+.counter-div {
+  width: 40rem;
+  border: 1px solid var(--dark-grey);
+  padding: 1rem;
+  background-color: var(--grey);
+  color: var(--black);
+  text-align: center;
+  border-radius: 25px;
+}
+
+.counter-div > * {
+ margin-bottom: 4rem;
+}
+
+.count {
+  font-size: 5rem
+}
+
+.buttons button {
+  padding: 1rem;
+  margin: 1rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 25px;
+  color: var(--dark-grey);
+  border: none;
+  cursor: pointer;
+}
+button.number {
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+button.subtract{
+  background-color: rgb(238, 80, 56);
+  font-size: 2rem;
+}
+
+button.clear{
+  background-color: rgb(0, 200, 255);
+  padding: 1rem 7rem;
+}
+button.add{
+  background-color: rgb(75, 162, 70);
+  font-size: 2rem;
+
+}
+button.divide{
+  background-color: rgb(174, 242, 240);
+  font-size: 2rem;
+}
+button.enter{
+  padding: 1rem 3rem;
+}

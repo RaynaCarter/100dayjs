@@ -8,7 +8,7 @@
 const btn = document.querySelector(".btn"),
 result = document.querySelector(".result"),
 category = document.querySelector(".category"),
-reset = document.querySelector(".btn"),
+reset = document.querySelector(".reset"),
 
 feet = document.querySelector(".feet"),
 inch = document.querySelector(".inches"),
@@ -16,15 +16,15 @@ weight = document.querySelector(".weight");
 
 // add event listener to the button 
 btn.addEventListener("click", calculateBMI);
-
+reset.addEventListener("click",)
 function calculateBMI(e) {
     e.preventDefault();
-
-    let heightsqd = convertHeight() ** 2;
-    let BMI = (Math.round(((weight.value)*703)/(heightsqd) * 100) / 100);
-    console.log(BMI);
-    result.innerHTML = "You're BMI is: "+ BMI + ", you are: "+ determineHealth(BMI);
-
+    validateInput();
+    // let heightsqd = convertHeight() ** 2;
+    // let BMI = (Math.round(((weight.value)*703)/(heightsqd) * 100) / 100);
+    // console.log(BMI);
+    // result.innerHTML = "You're BMI is: "+ BMI + ", you are: "+ determineHealth(BMI);
+    reset.style.display = "block";
 }
 // whats the difference between calling the global varibles from a funciton and
 // having the variable as an input?
@@ -43,6 +43,19 @@ function convertHeight() {
         return converthght;
     }
 }
+
+// Added validation
+function validateInput() {
+    if (feet === "" || isNaN(feet)) {
+        return (result.innerHTML = "Provide a valid Height(ft)!");
+      } else if (weight === "" || isNaN(weight)) {
+        return (result.innerHTML = "Provide a valid Height(in)!");
+      } else if (weight === "" || isNaN(weight)) {
+        return (result.innerHTML = "Provide a valid Weight!");
+      } 
+}
+    
+
 
 function determineHealth(BMI) {
     if (BMI <= 18.5) {

@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 
 :root {
   --white: #fff;
@@ -38,62 +38,87 @@ img {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Start */
+.box {
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center ;
-  height: 100vh; 
+  align-items: center;
 }
 
-.counter-div {
-  width: 40rem;
-  border: 1px solid var(--dark-grey);
-  padding: 1rem;
+.calc {
+  width: 30rem;
+  height: 35rem;
+  margin: 0 auto;
   background-color: var(--grey);
-  color: var(--black);
-  text-align: center;
-  border-radius: 25px;
+  padding: 1.5rem;
+  border-radius: 3px;
+  position: relative;
 }
 
-.counter-div > * {
- margin-bottom: 4rem;
-}
-
-.count {
-  font-size: 5rem
-}
-
-.buttons button {
-  padding: 1rem;
-  margin: 1rem 1rem;
-  font-size: 1.5rem;
-  border-radius: 25px;
+.result {
   color: var(--dark-grey);
-  border: none;
+  background-color: var(--white);
+  height: 4.5rem;
+  width: 70%;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  border: 2px solid var(--color-sec);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.clear {
+  width: 20%;
+  height: 4.5rem;
+  background-color: red;
+  padding: 1rem;
+  position: absolute;
+  right: 2rem;
+  top: 1.6rem;
+  border-radius: 3px;
+  color: var(--white);
   cursor: pointer;
+  text-align: center;
+  font-size: 1.6rem;
 }
-button.number {
-  background-color: rgb(255, 255, 255);
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  font-size: 1.6rem;
+}
+
+.keys li {
+  list-style: none;
+  width: 5rem;
+  background-color: var(--white);
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-primary);
+  border-radius: 3px;
+  color: var(--dark-grey);
+  text-align: center;
   cursor: pointer;
+  transition: all 0.1s;
 }
 
-button.subtract{
-  background-color: rgb(238, 80, 56);
-  font-size: 2rem;
+.keys li:hover {
+  background-color: var(--color-primary);
+  color: var(--white);
 }
 
-button.clear{
-  background-color: rgb(0, 200, 255);
-  padding: 1rem 7rem;
+.keys .equals {
+  background-color: orangered;
+  color: var(--white);
 }
-button.add{
-  background-color: rgb(75, 162, 70);
-  font-size: 2rem;
 
-}
-button.divide{
-  background-color: rgb(174, 242, 240);
-  font-size: 2rem;
-}
-button.enter{
-  padding: 1rem 3rem;
-}
+
+
+
+
+
+
